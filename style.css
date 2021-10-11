@@ -25,7 +25,7 @@ p {
 }
 .header {
     grid-area: header;
-    grid-row: 1;
+    /* grid-row: 1; */
     text-align: center;
 }
 .item2 {
@@ -87,6 +87,7 @@ textarea {
 .comment, .comment1{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     border: solid 2px whitesmoke;
     border-radius: 1rem;
     padding: 5px;
@@ -95,7 +96,7 @@ textarea {
 .comment1 {
     background-color: whitesmoke;
 }
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .grid-container {
         grid-template-areas:
             'header header header header header header'
@@ -103,5 +104,16 @@ textarea {
             'middle middle middle middle middle middle'
             'right right right right right right'
             'footer footer footer footer footer footer';
+    }
+    .header, .item2, .item3, .item4, .footer {
+        width: 45rem;
+    }
+    .input-koment,
+    .comment,
+    .comment1 {
+        width: 40rem;
+    }
+    textarea {
+        width: 100%;
     }
 }
