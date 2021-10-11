@@ -13,30 +13,35 @@ p {
 }
 .grid-container {
     display: grid;
-    grid-gap: 10px;
+    grid-template-areas: 'header header header header header header'
+    'left left middle middle right right'
+    'footer footer footer footer footer footer';
+    grid-gap: 2px;
 }
 .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     font-size: 30px;
 }
-.item1 {
-    grid-column: 1 / span 3;
+.header {
+    grid-area: header;
     grid-row: 1;
     text-align: center;
 }
 .item2 {
+    grid-area: left;
     background-color: whitesmoke;
 }
 .item3 {
     width: 50rem;
+    grid-area: middle;
 }
 .item4 {
+    grid-area: right;
     background-color: whitesmoke;
 }
-.item5 {
-    grid-column: 1 / span 3;
-    grid-row: 3;
+.footer {
+    grid-area: footer;
 }
 .input-koment {
     display: flex;
@@ -44,6 +49,12 @@ p {
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
+}
+.itemInput {
+    border-radius: 1rem;
+    background-color: #b9b9b965;
+    padding: 20px;
+    margin: 15px;
 }
 input[type=text],
 select,
@@ -58,6 +69,10 @@ textarea {
     margin-bottom: 16px;
     resize: vertical;
 }
+button[type=submit] {
+    padding: 5px;
+    font-size: 16px;
+}
 input[type=submit]:hover {
     background-color: #6a726a;
 }
@@ -69,11 +84,24 @@ input:focus, textarea:focus {
 textarea {
     height: 200px;
 }
-.comment, .comment1 {
+.comment, .comment1{
+    display: flex;
+    flex-wrap: wrap;
     border: solid 2px whitesmoke;
     border-radius: 1rem;
     padding: 5px;
+    width: 60rem;
 }
 .comment1 {
     background-color: whitesmoke;
+}
+@media (max-width: 720px) {
+    .grid-container {
+        grid-template-areas:
+            'header header header header header header'
+            'left left left left left left'
+            'middle middle middle middle middle middle'
+            'right right right right right right'
+            'footer footer footer footer footer footer';
+    }
 }
