@@ -69,6 +69,11 @@ input:focus, textarea:focus {
 textarea {
     height: 200px;
 }
+.comment, .comment1 {
+    border: solid 2px whitesmoke;
+    border-radius: 1rem;
+    padding: 5px;
+}
 .comment1 {
     background-color: whitesmoke;
 }
